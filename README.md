@@ -2,11 +2,11 @@
 
 **Two agent skills that pick, reuse, or refactor toward GoF design patterns.**
 
-Built on the [refactoring.guru catalog](https://refactoring.guru/design-patterns). `pattern` fires when you plan a feature and says which pattern fits, or that none does. `refactor` fires when you ask to clean up and names the pattern your ad-hoc code is already imitating.
+Built on https://refactoring.guru/design-patterns. `pattern` fires when you plan a feature and says which pattern fits, or that none does. `refactor` fires when you ask to clean up and names the pattern your ad-hoc code is already imitating.
 
 ## Install
 
-Works with Claude Code, Codex, OpenCode and anything else the [skills CLI](https://skills.sh) supports.
+Works with Claude Code, Codex, OpenCode and anything else https://skills.sh supports.
 
 ```sh
 npx skills add fidelisakilan/design-pattern-skills -a '*' -g
@@ -43,4 +43,4 @@ npx skills remove pattern refactor -a '*'
 
 ## Credits
 
-Pattern descriptions paraphrased from [refactoring.guru](https://refactoring.guru) by Alexander Shvets.
+Pattern descriptions paraphrased from https://refactoring.guru by Alexander Shvets.
