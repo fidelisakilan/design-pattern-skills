@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: Audit code for ad-hoc logic that a GoF pattern would absorb (if-chains on type, scattered constructors, hand-rolled listeners) and report what to refactor. Use when the user asks to clean up, simplify, or refactor an area, or mid-task when a change adds a third case to such logic: then suggest the audit in one line rather than running it.
+description: "Audit code for ad-hoc logic that a GoF pattern would absorb (if-chains on type, scattered constructors, hand-rolled listeners) and report what to refactor. Use when the user asks to clean up, simplify, or refactor an area. Mid-task, when a change adds a third case to such logic, suggest the audit in one line rather than running it."
 ---
 
 # Refactor toward patterns
@@ -12,6 +12,8 @@ Argument: a path, directory, or "diff" (changes vs the default branch). No argum
 **Auto-triggered mid-task** (you noticed the shape while doing something else): do not run the audit. Finish the current task, then add one line naming the shape and the offer, e.g. `calc.py has a 4-branch if-chain on plan_type (Strategy shape). Run /refactor src/pricing to see the refactor.` Run the full procedure only when invoked by name or the user says yes.
 
 ## Procedure
+
+Run steps 2 to 5 in a fresh, read-only subagent when the harness has one (Claude Code `Agent`, Codex or OpenCode subagents, otherwise inline). Brief it with the file list and a pointer to `../pattern/catalog.md`. It returns the ranked report. The main agent relays the report and applies only the item the user picks.
 
 1. **Scope.** Resolve the argument to a file list. For "diff", use `git diff --name-only $(git merge-base HEAD origin/HEAD 2>/dev/null || echo main)`.
 2. **Scan for shapes.** Each row is a smell and the pattern that absorbs it. Grep for the signal, then read the hit to confirm the shape is real.

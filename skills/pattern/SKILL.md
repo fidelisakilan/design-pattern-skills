@@ -1,6 +1,6 @@
 ---
 name: pattern
-description: Run before planning or starting a feature, module, or non-trivial change. Surveys the codebase for existing GoF patterns, picks the pattern that fits the new work (refactoring.guru catalog), and says whether to reuse, introduce, or refactor toward it. Also use when the user names a pattern or asks "which pattern fits". For auditing existing code, use /refactor instead.
+description: "Run before planning or starting a feature, module, or non-trivial change. Surveys the codebase for existing GoF patterns, picks the pattern that fits the new work (refactoring.guru catalog), and says whether to reuse, introduce, or refactor toward it. Also use when the user names a pattern or asks which pattern fits. For auditing existing code, use /refactor instead."
 ---
 
 # Design patterns
@@ -8,6 +8,8 @@ description: Run before planning or starting a feature, module, or non-trivial c
 Pattern tables with intent, "reach for when" and "skip when" live in [catalog.md](catalog.md). Read it at step 3. A pattern is a named solution to a recurring design problem, not a goal. The question is always "which problem?" first, "which pattern?" second.
 
 ## Procedure
+
+Steps 2 to 4 run in a fresh, read-only subagent when the harness has one (Claude Code `Agent`, Codex or OpenCode subagents, otherwise inline). Brief it with the problem sentence from step 1, the feature area, and a pointer to `catalog.md`. It returns the Design block below. The main agent follows that block without re-deriving it. A fresh agent sees the codebase without the plan already in its head, so its pick is not anchored on yours.
 
 1. **Name the problem.** One sentence, no pattern names. If you cannot, there is no pattern to apply; build the feature plainly and stop here.
 2. **Survey the codebase.** Find patterns already in use so the new work matches the house style instead of inventing a second way:
