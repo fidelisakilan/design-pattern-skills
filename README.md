@@ -2,7 +2,10 @@
 
 **Two agent skills that pick, reuse, or refactor toward GoF design patterns.**
 
-Built on https://refactoring.guru/design-patterns. `pattern` fires when you plan a feature and says which pattern fits, or that none does. `refactor` fires when you ask to clean up and names the pattern your ad-hoc code is already imitating.
+Built on https://refactoring.guru/design-patterns.
+
+- `pattern` fires when you plan a feature and says which pattern fits, or that none does.
+- `refactor` fires when you ask to clean up and names the pattern your ad-hoc code is already imitating.
 
 ## Install
 
